@@ -1,0 +1,9 @@
+Package: net.limneos.magicapp
+Name: MagicApp
+Depends: 
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome application!
+Maintainer: Elias Limneos
+Author: Elias Limneos
+Section: Utilities
