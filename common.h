@@ -80,97 +80,10 @@ void GSInitialize();
 @end
 
 @interface AXEventRepresentation : NSObject
-+(id)representationWithHIDEvent:(id)event hidStreamIdentifier:(id)identifier;
++(id)representationWithHIDEvent:(IOHIDEventRef)event hidStreamIdentifier:(id)identifier;
 @end
 @interface UITouchesEvent : UIEvent
 @end
-
-typedef struct  {
-		unsigned deactivatingReasonFlags : 8;
-		unsigned isSuspended : 1;
-		unsigned isSuspendedEventsOnly : 1;
-		unsigned isLaunchedSuspended : 1;
-		unsigned calledNonSuspendedLaunchDelegate : 1;
-		unsigned isHandlingURL : 1;
-		unsigned isHandlingRemoteNotification : 1;
-		unsigned isHandlingLocalNotification : 1;
-		unsigned isHandlingBackgroundContentFetch : 1;
-		unsigned statusBarShowsProgress : 1;
-		unsigned statusBarHidden : 1;
-		unsigned blockInteractionEvents : 4;
-		unsigned receivesMemoryWarnings : 1;
-		unsigned showingProgress : 1;
-		unsigned receivesPowerMessages : 1;
-		unsigned launchEventReceived : 1;
-		unsigned systemIsAnimatingApplicationLifecycleEvent : 1;
-		unsigned isResuming : 1;
-		unsigned isSuspendedUnderLock : 1;
-		unsigned shouldExitAfterSendSuspend : 1;
-		unsigned terminating : 1;
-		unsigned isHandlingShortCutURL : 1;
-		unsigned idleTimerDisabled : 1;
-		unsigned deviceOrientation : 3;
-		unsigned delegateShouldBeReleasedUponSet : 1;
-		unsigned delegateHandleOpenURL : 1;
-		unsigned delegateOpenURL : 1;
-		unsigned delegateDidReceiveMemoryWarning : 1;
-		unsigned delegateWillTerminate : 1;
-		unsigned delegateSignificantTimeChange : 1;
-		unsigned delegateWillChangeInterfaceOrientation : 1;
-		unsigned delegateDidChangeInterfaceOrientation : 1;
-		unsigned delegateWillChangeStatusBarFrame : 1;
-		unsigned delegateDidChangeStatusBarFrame : 1;
-		unsigned delegateDeviceAccelerated : 1;
-		unsigned delegateDeviceChangedOrientation : 1;
-		unsigned delegateDidBecomeActive : 1;
-		unsigned delegateWillResignActive : 1;
-		unsigned delegateDidEnterBackground : 1;
-		unsigned delegateDidEnterBackgroundWasSent : 1;
-		unsigned delegateWillEnterForeground : 1;
-		unsigned delegateWillSuspend : 1;
-		unsigned delegateDidResume : 1;
-		unsigned delegateSupportsStateRestoration : 1;
-		unsigned delegateSupportedInterfaceOrientations : 1;
-		unsigned userDefaultsSyncDisabled : 1;
-		unsigned headsetButtonClickCount : 4;
-		unsigned isHeadsetButtonDown : 1;
-		unsigned isFastForwardActive : 1;
-		unsigned isRewindActive : 1;
-		unsigned shakeToEdit : 1;
-		unsigned isClassic : 1;
-		unsigned zoomInClassicMode : 1;
-		unsigned ignoreHeadsetClicks : 1;
-		unsigned touchRotationDisabled : 1;
-		unsigned taskSuspendingUnsupported : 1;
-		unsigned taskSuspendingOnLockUnsupported : 1;
-		unsigned isUnitTests : 1;
-		unsigned requiresHighResolution : 1;
-		unsigned disableViewContentScaling : 1;
-		unsigned singleUseLaunchOrientation : 3;
-		unsigned defaultInterfaceOrientation : 3;
-		unsigned supportedInterfaceOrientationsMask : 5;
-		unsigned delegateWantsNextResponder : 1;
-		unsigned isRunningInApplicationSwitcher : 1;
-		unsigned isSendingEventForProgrammaticTouchCancellation : 1;
-		unsigned delegateWantsStatusBarTouchesEnded : 1;
-		unsigned interfaceLayoutDirectionIsValid : 1;
-		unsigned interfaceLayoutDirection : 3;
-		unsigned restorationExtended : 1;
-		unsigned normalRestorationInProgress : 1;
-		unsigned normalRestorationCompleted : 1;
-		unsigned isDelayingTintViewChange : 1;
-		unsigned isUpdatingTintViewColor : 1;
-		unsigned isHandlingMemoryWarning : 1;
-		unsigned forceStatusBarTintColorChanges : 1;
-		unsigned disableLegacyAutorotation : 1;
-		unsigned isFakingForegroundTransitionForBackgroundFetch : 1;
-		unsigned couldNotRestoreStateWhenLocked : 1;
-		unsigned disableStyleOverrides : 1;
-		unsigned legibilityAccessibilitySettingEnabled : 1;
-		unsigned viewControllerBasedStatusBarAppearance : 1;
-		unsigned fakingRequiresHighResolution : 1;
-		unsigned isStatusBarFading : 1;
-	}  applicationFlags;
 	
 @interface UITouch (synthesize){
 	/*int _tapCount;
