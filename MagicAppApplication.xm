@@ -2,7 +2,6 @@
 
 #include "common.h"
 
-//@interface MyWindow : _UIRootWindow
 @interface MyWindow : UIWindow
 @end
 
@@ -16,9 +15,9 @@
 
 
 @implementation MyWindow
-/*-(id)_initWithFrame:(CGRect)frame debugName:(id)name attached:(BOOL)attached{
+-(id)_initWithFrame:(CGRect)frame debugName:(id)name attached:(BOOL)attached{
 	return objc_getClass("_UIRootWindow") ? [[objc_getClass("_UIRootWindow") alloc] _initWithFrame:frame debugName:name attached:attached] : [super _initWithFrame:frame debugName:name attached:attached]; //IOS8 Compatibility
-}*/
+}
 -(BOOL)_isSecure{
 	return YES;
 }
@@ -52,10 +51,8 @@
 	if (!_appWindow){ // create our window
 		if ([UIWindow instancesRespondToSelector:@selector(_initWithFrame:debugName:attached:)]){
 			_appWindow = [[MyWindow alloc] _initWithFrame:[[UIScreen mainScreen] bounds] debugName:@"MyWindow" attached:YES];
-			NSLog(@"INIT 1");
 		}
 		else{
-			NSLog(@"INIT 2");
 			_appWindow = [[MyWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; // ios 7 compatibility	
 		}
 		
@@ -66,10 +63,7 @@
 		
 	}
 	
-	NSUserDefaults *defaults=[[NSUserDefaults alloc] initWithSuiteName:@"net.limneos.answeringmachine"];
-	[defaults synchronize];
-	NSLog(@"Defaults %@",[defaults dictionaryRepresentation]);
-	[defaults release];
+	 
 }
  
 -(id)init{
