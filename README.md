@@ -20,3 +20,12 @@ e.g. upon springboard launch:
     }
     %end
 
+To manually launch the application:
+
+		/System/Library/CoreServices/MagicApp.app/MagicApp
+		
+
+This sample demonstrates the ability to use touches out of the box, 
+the ability to choose hitTest transparency , 
+and the ability to set view's transparency over SpringBoard, still showing SpringBoard's contents.
+e.g. Getting a screen shot from within the daemon, will also grab SpringBoard's contents.
