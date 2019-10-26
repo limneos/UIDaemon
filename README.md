@@ -15,7 +15,7 @@ e.g. upon springboard launch:
     %hook SpringBoard
     -(void)applicationDidFinishLaunching:(id)appl{
       %orig;
-      CFMessagePortRef port=CFMessagePortCreateRemote(NULL,@"net.limneos.magicapp.springboardDidFinishLaunching");
+      CFMessagePortRef port=CFMessagePortCreateRemote(NULL,CFSTR("net.limneos.magicapp.springboardDidFinishLaunching"));
       CFMessagePortSendRequest(port, 1,(CFDataRef)[NSData data], 10,10, NULL,NULL);
     }
     %end
